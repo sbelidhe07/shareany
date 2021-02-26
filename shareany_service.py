@@ -4,7 +4,7 @@ import bcrypt
 
 app = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'farmernest'
+app.config['MONGO_DBNAME'] = 'shareany'
 app.config[
     'MONGO_URI'] = 'mongodb+srv://portalappuser:admin123@cluster0.89wan.mongodb.net/shareany?retryWrites=true&w=majority&tlsAllowInvalidCertificates=true'
 

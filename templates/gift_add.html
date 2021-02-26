@@ -1,0 +1,128 @@
+<html>
+<head>
+	<title>ShareAny</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/streamr-client@4.1.6/dist/streamr-client.web.js"></script>
+    <script src="../static/js/streamr.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/streamr.css"/>
+   
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+<link rel="manifest" href="../static/img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script>
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+<style>
+.donate {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: red;
+    padding:1px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+</style>
+
+  </head>
+<body>
+<div w3-include-html="{{ url_for('menubara') }}"></div>
+<script>
+includeHTML();
+</script>
+
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-size: cover; background-image: url(../static/img/stop_food_wastage.jpg);">
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-8 col-lg-6 pb-10">
+                    <!--Form with header-->
+                    <form action="#" method="post">
+                        <div class="card border-primary rounded-0">
+                            <div class="card-header p-0">
+                                <div class="bg-info text-white text-center py-2">
+                                    <h3><i class="fa fa-envelope"></i> Form to add new Gift Items</h3>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+
+                                <!--Body-->
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-gift text-info"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" id="gname" name="gname" placeholder="Name of the Gift" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-comment text-info"></i></div>
+                                        </div>
+                                        <textarea class="form-control" id="notes" name="notes" placeholder="Notes" required></textarea>
+                                    </div>
+                                </div>
+				<div class="text-center">
+                                    <div class="btn-group" role="group">
+                                    <input type="submit" value="Submit" class="btn btn-primary rounded-2" style="margin:5px;">
+                                    <input type="button" value="close" class="btn btn-primary rounded-2" style="margin:5px;">
+                                    </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!--Form with header-->
+                </div>
+	</div>
+</div>
+</section>
+</body>
+</html>

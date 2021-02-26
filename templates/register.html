@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>ShareAny</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" id="bootstrap-css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css"/>
+   
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+<link rel="manifest" href="../static/img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script>
+</script>
+  </head>
+<body>
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-image: url(../static/img/stop_food_wastage.jpg); background-size:cover">
+<div class="container">
+  <h1 class="text-light"><strong>ShareAny - Registration</strong> </h1>
+    <div class="card card-login mx-auto text-center bg-dark">
+        <div class="card-header mx-auto bg-dark">
+        </div>
+        <div class="card-body">
+            <form method=POST action="{{ url_for('register') }}">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" name="username" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="password" name="pass" class="form-control" placeholder="Password">
+                </div>
+
+		 <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
+                    </div>
+                  <select name="role" id="role"  class="selectpicker form-control" data-style="btn-primary" style="color:gray">
+                      <option>Select Role</option>
+                      <option value="Admin">Admin</option>
+                      <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" name="btn" value="Register" class="btn btn-outline-danger float-right btn-block ">
+                </div>
+            </form>
+        </div>
+        <br>
+            <div>
+               <label style="color:white">Already have account?</label> <a href="{{ url_for('index') }}">Login</a>.
+            </div>
+    </div>
+</div>
+</section>
+</body>
+</html>

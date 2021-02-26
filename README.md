@@ -2,7 +2,7 @@
  
  ###### Need to follow below steps as part of configuration
  * Create Virtual Environment --> python3 -m venv shareany_env
- * Activate the environment --> source flask/bin/activate
+ * Activate the environment --> source shareany_env/bin/activate
  * Install Flask library --> pip3 install flask
  * Install mongo library --> pip3 install pymongo
  * Install Encryption library for password --> pip3 install bcrypt
